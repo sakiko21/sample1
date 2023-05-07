@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { FaStar } from "react-icons/fa";
 
-export default function ReactStars({totalStars = 5}){
-    const [selectedStars, setSelectedStars] = useState(totalStars);
+export default function ReactStars({totalStars = 5, count=1}){
+    const [selectedStars, setSelectedStars] = useState(count);
     console.log(selectedStars);
     const Star = ({selected = false, onSelect = f => f}) => (<FaStar color = {selected ? "red":"gray"} onClick={() => onSelect()}/>)
     return[...Array(totalStars)].map((_, i) => <Star key={i} selected={i < selectedStars} onSelect={()=> setSelectedStars(i + 1)}/>);
@@ -16,5 +16,7 @@ export default function ReactStars({totalStars = 5}){
     //このインデックスは、Starコンポーネントのkey属性に設定され、選択された星の判断にも使われています。
     //(_, i) を使用して、totalStars の数だけ Star コンポーネントを生成し、適切なプロパティを設定しています。
     //要約すると、このコードは totalStars の数だけ星を表示し、その星が選択されているかどうかを判断し、選択時の動作を設定しています。
+ //count=1の意味がよく理解できない。
+
 };
 
