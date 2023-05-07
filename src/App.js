@@ -2,12 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 
 import DoubbleButton from './components/DoubbleButton';
+import ReactStars from './components/ReactStars';
+import data from './data.json';
 
 function App() {
+  console.log(data);
   return (
-    <>
-      <DoubbleButton />
-    </>
+    <div className="App">
+      <ReactStars totalStars={5} />
+    </div>
   );
 }
 
