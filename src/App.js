@@ -7,7 +7,7 @@ import data from './data.json';
 import CountButton from './components/countButton';
 import TextField from './components/TextField'
 import StopWatch from './components/StopWatch';
-
+import './components/StopWatch.css'
 
 function App() {
   return (
