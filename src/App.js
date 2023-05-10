@@ -8,11 +8,12 @@ import CountButton from './components/countButton';
 import TextField from './components/TextField'
 import StopWatch from './components/StopWatch';
 import './components/StopWatch.css'
+import WindowSize from './components/WindowSize'
 
 function App() {
   return (
     <div className="App">
-       <StopWatch />  
+       <WindowSize />  
     </div>
   );
 }
