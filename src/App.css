@@ -42,9 +42,41 @@
   font-display: column;
   align-items: center;
   justify-content: center;
-
 }
 .book-item{
   margin: auto;
   width: 30%;
+}
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+.content {
+  margin: 3rem auto;
+}
+
+.content ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.user-card {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.user-card img{
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }

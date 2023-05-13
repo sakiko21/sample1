@@ -1,22 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { createContext, useState } from 'react';
+import UserList from './components/UserList';
+export const LanguageContext = createContext();//クリエイトコンテキストを作り、他のコンポートでも読み込めるようエクスポートする
 
-import DoubbleButton from './components/DoubbleButton';
-import ReactStars from './components/ReactStars';
-import data from './data.json';
-import CountButton from './components/countButton';
-import TextField from './components/TextField'
-import StopWatch from './components/StopWatch';
-import './components/StopWatch.css'
-import WindowSize from './components/WindowSize'
-import MountComponent from './components/MountComponent';
-
-function App() {
+export default function App() {
+  const [language, setLanguage] = useState("ja_JP");
   return (
-    <div className="App">
-       <MountComponent/>  
-    </div>
+    <LanguageContext.Provider value={language}> 
+     {/*クリエイトコンテクストで作ったものみプロバイダをあたえ、バリュー値を設定。バリュー値設定したものを、配下のコンポーネントで使える*/}
+      <div className="App">
+        {/*コンテキストを切り替えるセレクト*/}
+        <label>言語の選択：</label>
+        <select onChange={(e) => setLanguage(e.target.value)}>
+          <option value="ja_JP"  selected={language === "ja_JP" ? true : false}>日本語</option>
+          <option value="en_US" selected={language === "en_US" ? true : false}>英語</option>
+        </select>
+        <UserList />
+      </div>
+    </LanguageContext.Provider>
   );
 }
 
-export default App;
